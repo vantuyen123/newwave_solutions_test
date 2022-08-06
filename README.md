@@ -1,6 +1,12 @@
 # newwave_solutions_test
 
-A new Flutter project.
+Author Dao Van Tuyen
+
+
+Result:
+
+ ![z3624336945640_0a6e74c81fe198dd813f79fac0fa041c](https://user-images.githubusercontent.com/68177953/183264370-e1a51b74-a58a-44c0-b509-b8178dbeb431.jpg)
+
 
 ## Getting Started
 
