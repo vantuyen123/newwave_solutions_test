@@ -28,7 +28,7 @@ class MovieModel {
   late final String releaseDate;
   late final String title;
   late final bool video;
-  late final double? voteAverage;
+  late final String? voteAverage;
   late final int voteCount;
 
   MovieModel.fromJson(Map<String, dynamic> json){
@@ -44,7 +44,7 @@ class MovieModel {
     releaseDate = json['release_date'];
     title = json['title'];
     video = json['video'];
-    voteAverage = double.parse(json['vote_average'].toString());
+    voteAverage = json['vote_average'] != null ? json['vote_average'].toString() : '0.0';
     voteCount = json['vote_count'];
   }
 

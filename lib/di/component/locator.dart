@@ -6,6 +6,7 @@ import 'package:newwave_solutions_test/data/domain/usecases/get_popular/get_popu
 import 'package:newwave_solutions_test/presentations/blocs/movie_popular_bloc/movie_popular_bloc.dart';
 
 import '../../data/core/constants/dio_client.dart';
+import '../../presentations/blocs/loading/loading_bloc.dart';
 import '../module/network_module.dart';
 
 final getInstance = GetIt.I;
@@ -23,9 +24,14 @@ Future<void> locator() async {
   //MovieRepository:----------------------------------------------------------------------------------------------------
   getInstance.registerLazySingleton<MovieRepository>(() => MovieRepositoryImpl(getInstance()));
 
+  //LoadingBloc:--------------------------------------------------------------------------------------------------------
+  getInstance.registerSingleton<LoadingBloc>(LoadingBloc());
+
   //GetMoviePopular:----------------------------------------------------------------------------------------------------
   getInstance.registerLazySingleton<GetPopular>(() => GetPopular(getInstance()));
 
   //MoviePopularBloc:---------------------------------------------------------------------------------------------------
-  getInstance.registerLazySingleton<MoviePopularBloc>(() => MoviePopularBloc(getInstance()));
+  getInstance.registerLazySingleton<MoviePopularBloc>(() => MoviePopularBloc(getInstance(),getInstance()));
+
+
 }
